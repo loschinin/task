@@ -1,0 +1,46 @@
+<html>
+
+<head>
+  <title>
+  </title>
+</head>
+
+<body>
+
+  <script type="text/javascript">
+    function SelectDefault() {
+      // порядковый индекс под которым идёт элемент с  value=7
+      document.getElementById("SelectMyLove").options[4].selected = true;
+
+    }
+
+    function Size() {
+      alert("количество элементов= " + document.getElementById("SelectMyLove").length);
+      if (confirm("Очистить список?")) {
+
+        document.getElementById("SelectMyLove").length = 0;
+      } else {
+
+      }
+
+    }
+  </script>
+
+  <FORM id="FormMyLove" name="FormMyLove">
+    <SELECT name="SelectMyLove" id="SelectMyLove" OnChange='Size()'>
+
+      <OPTION VALUE="0">Выбираем любимый фрукт</OPTION>
+      <OPTION VALUE="1">Абрикос</OPTION>
+      <OPTION VALUE="2">Персик</OPTION>
+      <OPTION VALUE="3">Слива</OPTION>
+      <OPTION VALUE="7">Груша</OPTION>
+    </SELECT>
+  </FORM>
+
+  <script type="text/javascript">
+    SelectDefault();
+  </script>
+
+</body>
+
+</html>

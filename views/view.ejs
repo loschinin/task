@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../public/style.css" type="text/css">
+
+</head>
+
+<body>
+  <div class="header">
+    <h1>Данные по зарплате</h1>
+    <h2>
+      Ср. зарплата на человека в компании за мес.:
+      <span><%= avgUserMonth.toFixed(1) %></span>,
+      за день*:
+      <span><%= avgUserDay.toFixed(1) %></span>,
+      за час:
+      <span><%= avgUserHour.toFixed(1) %></span>
+    </h2>
+    <h2>
+      Ср. зарплата в
+      <span><%= depId %></span> отделе
+      в месяц
+      <span><%= avgDepartmentMonth.toFixed(1) %></span>,
+      в день
+      <span><%= avgDepartmentDay.toFixed(1) %></span>,
+      в час <span><%= avgDepartmentHour.toFixed(1) %></span>
+    </h2>
+  </div>
+
+
+  <div id="block" class="block">
+    <% parsdata.data.forEach(function(obj) { %>
+    <div class="item">
+      <p>ID сотрудника: <%= obj.user_id %></p>
+      <p>Номер отдела: <%= obj.department_id %></p>
+      <p>Код должности: <%= obj.position_id %></p>
+      <p>зп за мес.: <%= obj.salary %></p>
+    </div>
+    <% }) %>
+  </div>
+
+
+  <footer class="footer">
+    *день = с ПН по ПТ
+  </footer>
+  <script type="text/javascript" src="../public/myscript.js"></script>
+</body>
+
+</html>
